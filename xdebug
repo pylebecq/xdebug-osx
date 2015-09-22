@@ -42,12 +42,6 @@ if [ $? -eq 0 ]; then
                 mv "$xdebug_conf" "$xdebug_conf.disabled" 2> /dev/null
                 STATUS="disabled"
             fi
-
-            echo ""
-            echo "Xdebug has been $STATUS, restarting apache (it might ask for your password)"
-
-            sudo pkill -9 httpd
-            sudo apachectl -k restart > /dev/null 2>&1
         else
             echo ""
             echo "Usage: xdebug [ on | off ]"
